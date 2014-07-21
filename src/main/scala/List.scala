@@ -51,9 +51,18 @@ def sum(ints: List[Int]): Int = ints match { // A function that uses pattern mat
     case Cons(_, t) =>  t
   }
 
-  def setHead[A](l: List[A], h: A): List[A] = sys.error("todo")
+  def setHead[A](l: List[A], h: A): List[A] = l match {
+    case Nil =>  sys.error("empty list")
+    case Cons(_, t) =>  Cons(h,t)
+  }
 
-  def drop[A](l: List[A], n: Int): List[A] = sys.error("todo")
+  def drop[A](l: List[A], n: Int): List[A] = {
+    if (n <= 0) l
+    else l match {
+      case Nil =>  sys.error("empty list")
+      case Cons(_, t) =>  drop(t,n-1)
+    }
+  }
 
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = sys.error("todo")
 
