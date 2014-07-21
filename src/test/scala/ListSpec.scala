@@ -1,4 +1,4 @@
-import com.fpinscala.exercises.List
+import com.fpinscala.exercises.datastructures.List
 import org.scalatest.{Matchers, FlatSpec}
 
 /**
